@@ -1,11 +1,13 @@
 from flask import Flask, request, jsonify
 from textblob import TextBlob
+import json
 
 app = Flask(__name__)
 
 @app.route('/')
 def home():
-    return 'Hello, World!'
+    return 'Hello, World!-'+json.dumps(app.config)
+
 
 @app.route('/tokenize', methods=['POST'])
 def tokenize():
