@@ -1,2 +1,5 @@
-flask
-nltk
+#flask
+#nltk
+#segtok
+#spacy
+textblob

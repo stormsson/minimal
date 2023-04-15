@@ -1,10 +1,5 @@
 from flask import Flask, request, jsonify
-import nltk
-from nltk.tokenize import sent_tokenize
-from os.path import join
-
-# must be relative to project root
-nltk.data.path.append(join("data"))
+from textblob import TextBlob
 
 app = Flask(__name__)
 
@@ -15,9 +10,10 @@ def home():
 @app.route('/tokenize', methods=['POST'])
 def tokenize():
     data = request.json
-    content = data.get('content', '')
+    content = TextBlob(data.get('content', ''))
 
-    sentences = sent_tokenize(content)
+    sentences = [str(sent) for sent in content.sentences]
+
     return jsonify(sentences=sentences)
 
 
