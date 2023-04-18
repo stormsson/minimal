@@ -1,6 +1,6 @@
 {
     "rewrites": [
-      { "source": "/p/(.*)", "destination": "/papi/index" }
+      { "source": "/p/(.*)", "destination": "/api/index" }
     ]
-  }
+}
   
