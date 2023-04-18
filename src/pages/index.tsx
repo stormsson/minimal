@@ -3,27 +3,8 @@ import Image from 'next/image'
 import { Inter } from 'next/font/google'
 import styles from '@/styles/Projects.module.scss'
 
-import ProjectList  from '../components/ProjectList'
-
-
 const inter = Inter({ subsets: ['latin'] })
 
-import { supabase } from './../lib/supabaseClient';
-export async function getServerSideProps(context:any) {
-
-    const { data } = await supabase.from('project')
-        .select()
-        .eq('active', true);
-        
-    console.log(data);
-
-    return {
-        props: {
-        projects: data
-        }, // will be passed to the page component as props
-    }
-}
-  
 
 export default function Projects({projects}: any) {
 
@@ -36,7 +17,7 @@ export default function Projects({projects}: any) {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main className={styles.main}>        
-        <ProjectList projects={projects}/>
+        This is the index
       </main>
     </>
   )

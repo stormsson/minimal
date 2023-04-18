@@ -2,4 +2,4 @@ flask
 #nltk
 #segtok
 #spacy
-textblob
+#textblob
